@@ -1,1 +1,1 @@
-crypto.get 
+/// <reference types="cypress" /> 
