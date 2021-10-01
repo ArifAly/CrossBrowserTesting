@@ -6,6 +6,7 @@ describe('Test suite For Cross Browser Testing', function(){
     cy.get('.at-cm-no-button').click()
     cy.get('#btn_basic_example').click()
     cy.get('#basic').contains('Simple Form Demo').click()
+     
 
     })
 })
