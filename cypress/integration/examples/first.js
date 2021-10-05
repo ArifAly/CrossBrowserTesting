@@ -14,7 +14,7 @@ describe('Test suite For Cross Browser Testing', function(){
      cy.get(':nth-child(1) > :nth-child(3) > .form-control').type('Ali')
      cy.get('.col-md-8 > .form-control').type('Street No# 04, Rawalpindi punjab Pakistan')
      cy.get('#eid > .form-control').type('arifalidanish15@gmail.com')
-     cy.get(':nth-child(4) > .col-md-4 > .form-control').type('03405057916')
+     cy.get(':nth-child(4) > .col-md-4 > .form-control').type('03369167046')
     
     })
 })
