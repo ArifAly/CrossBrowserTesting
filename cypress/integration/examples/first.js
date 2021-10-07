@@ -49,7 +49,7 @@ describe('Test suite For Cross Browser Testing', function(){
      //cy.wait(2000)
      First.getloop().each(($el, index , $list) => {
     
-        if($el.text()==="india") // if the text is indonesia, then click on that text
+        if($el.text()==="india") // if the text is india, then click on that text
         {
             //$el.click() // not working that's why i am using the following method
         }
