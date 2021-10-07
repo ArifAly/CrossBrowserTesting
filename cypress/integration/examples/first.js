@@ -1,4 +1,5 @@
 /// <reference types="cypress" /> 
+import first from "../../support/pageObjects/first"
 Cypress.on('uncaught:exception', (err, runnable)=> {
     // returning false here prevents Cypress from
     // failing the test
@@ -17,52 +18,51 @@ describe('Test suite For Cross Browser Testing', function(){
         })
     })
     it('First test case', function(){
+        const First = new first()
     cy.visit('http://demo.automationtesting.in/')
-    cy.get('#enterimg').click()
-    cy.get('h2').contains(this.data.heading)
-     cy.get('.col-md-3.col-xs-3.col-sm-3.control-label').contains('Full Name')
-     cy.get(':nth-child(1) > :nth-child(2) > .form-control').type(this.data.FirstName)
-     cy.get(':nth-child(1) > :nth-child(2) > .form-control').should('have.value', this.data.FirstName)
-     cy.get(':nth-child(1) > :nth-child(3) > .form-control').type(this.data.LastName)
-     cy.get(':nth-child(1) > :nth-child(3) > .form-control').should('have.value', this.data.LastName)
-     cy.get('.col-md-8 > .form-control').type(this.data.Address)
-     cy.get('.col-md-8 > .form-control').should('have.value',this.data.Address)
-     cy.get('#eid > .form-control').type(this.data.Email)
-     cy.get('#eid > .form-control').should('have.value', this.data.Email)
-     cy.get(':nth-child(4) > .col-md-4 > .form-control').type(this.data.PhoneNumber)
-     cy.get(':nth-child(4) > .col-md-4 > .form-control').should('have.value',this.data.PhoneNumber)
-     cy.get('input[type="radio"]').first().check()
-     
-     cy.get('#checkbox1').check()
+     First.getenter().click()
+     First.getheading().contains(this.data.heading)
+     First.getfullname().contains('Full Name')
+     First.getfirstName().type(this.data.FirstName)
+     First.getfirstName().should('have.value', this.data.FirstName)
+     First.getlastName().type(this.data.LastName)
+     First.getlastName().should('have.value', this.data.LastName)
+     First.getAddress().type(this.data.Address)
+     First.getAddress().should('have.value',this.data.Address)
+     First.getEmail().type(this.data.Email)
+     First.getEmail().should('have.value', this.data.Email)
+     First.getPhoneNumber().type(this.data.PhoneNumber)
+     First.getPhoneNumber().should('have.value',this.data.PhoneNumber)
+     First.getRadio().first().check()
+     First.getCheckBox().check()
      //cy.get('.ui-autocomplete > :nth-child(3)').select('English')
-     cy.get('#msdd').click()
-     cy.get(':nth-child(3) > .ui-corner-all').click()
-     cy.get(':nth-child(4) > .ui-corner-all').click()
-     cy.get(':nth-child(7) > .ui-corner-all').click()
-     cy.get('#section > .container > .row').click()
+     First.getForClick1().click()
+     First.getForClick2().click()
+     First.getForClick3().click()
+     First.getForClick4().click()
+     First.getForClick5().click()
      //cy.get('#Skills').click()
-     cy.get('#Skills').select('C').should('have.value', 'C')
-     cy.get('.select2-selection').click()
+     First.getSkills().select('C').should('have.value', 'C')
+     First.getSelection().click()
 
-     cy.get('.select2-search__field').type(this.data.Country)
+     First.getCountry().type(this.data.Country)
      //cy.wait(2000)
-     cy.get('.select2-results__option').each(($el, index , $list) => {
+     First.getloop().each(($el, index , $list) => {
     
         if($el.text()==="india") // if the text is indonesia, then click on that text
         {
             //$el.click() // not working that's why i am using the following method
         }
-        cy.get('.select2-results__option').click() // $el.click is working then no need of this link
-        cy.get('#yearbox').select(this.data.year).should('have.value', this.data.year)
-        cy.get(':nth-child(11) > :nth-child(3) > .form-control').select(this.data.Month).should('have.value', this.data.Month)
-        cy.get('#daybox').select(this.data.day).should('have.value', this.data.day)
-        cy.get('#firstpassword').type(this.data.password)
-        cy.get('#firstpassword').should('have.value', this.data.password)
-        cy.get('#secondpassword').type(this.data.confirmPassword)
-        cy.get('#secondpassword').should('have.value', this.data.confirmPassword)
-        cy.get('#submitbtn').click()
+        First.getResultOption().click() // $el.click is working then no need of this link
+        First.getyearBox().select(this.data.year).should('have.value', this.data.year)
+        First.getMonth().select(this.data.Month).should('have.value', this.data.Month)
+        First.getDay().select(this.data.day).should('have.value', this.data.day)
+        First.getPassword().type(this.data.password)
+        First.getPassword().should('have.value', this.data.password)
+        First.getconfirmPassword().type(this.data.confirmPassword)
+        First.getconfirmPassword().should('have.value', this.data.confirmPassword)
+        First.getSubmit().click()
      })
-     
     })
 })
  
