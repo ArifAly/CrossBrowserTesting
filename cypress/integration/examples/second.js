@@ -1,6 +1,10 @@
 /// <reference types="cypress" /> 
 describe('Test Suites for Testing', function(){
- 
+   before(() =>{
+     
+
+
+   })
     it('Test case for the Selectors', function(){
         cy.visit('http://demo.automationtesting.in/')
         cy.get('#enterimg').click()
@@ -10,6 +14,8 @@ describe('Test Suites for Testing', function(){
         cy.get(':nth-child(2) > .analystic').click()
         cy.get('.SerializeFunc > :nth-child(1) > b').click() 
         //cy.get('//span[@id="result"]').contains('Readability')
+         
+       
          
     })
 })
